@@ -1,0 +1,69 @@
+# Sakuli example docker-compose.yml file with 2 different container running the same tests in parrallel
+
+sakuli-cm_assign_ticket:
+#  image: consol/sakuli-centos-xfce
+  build: test_client
+  volumes:
+  - ./consol_cm_test_suites:/root/my_test_suites
+  environment:
+  # set correct timezone
+  - TZ=Europe/Berlin
+  # set Sakuli test suite
+  - SAKULI_TEST_SUITE=/root/my_test_suites/test_assign_ticket
+  ports:
+  #vnc
+  - 5911:5901
+  #noVNC HTML client
+  - 6911:6901
+
+sakuli-cm_attach_pdf:
+#  image: consol/sakuli-centos-xfce
+  build: test_client
+  volumes:
+  - ./consol_cm_test_suites:/root/my_test_suites
+  environment:
+  # set correct timezone
+  - TZ=Europe/Berlin
+  # set Sakuli test suite
+  - SAKULI_TEST_SUITE=/root/my_test_suites/test_attach_pdf
+  ports:
+  #vnc
+  - 5912:5901
+  #noVNC HTML client
+  - 6912:6901
+
+sakuli-cm_comment_ticket:
+#  image: consol/sakuli-centos-xfce
+  build: test_client
+  volumes:
+  - ./consol_cm_test_suites:/root/my_test_suites
+  environment:
+  # set correct timezone
+  - TZ=Europe/Berlin
+  # set Sakuli test suite
+  - SAKULI_TEST_SUITE=/root/my_test_suites/test_comment_ticket
+  ports:
+  #vnc
+  - 5913:5901
+  #noVNC HTML client
+  - 6913:6901
+
+#
+#sakuli-example-ubuntu:
+#  image: consol/sakuli-ubuntu-xfce
+#  volumes:
+#  - ../example_test_suites:/root/my_test_suites
+#  environment:
+#  # set correct timezone
+#  - TZ=Europe/Berlin
+#  # set Sakuli test suite
+##  - SAKULI_TEST_SUITE=/root/my_test_suites/example_xfce
+#  ports:
+#  #vnc
+#  - 5912:5901
+#  #noVNC HTML client
+#  - 6912:6901
+#  # performance settings
+#  cpu_shares: 128
+##  cpu_quota:
+#  mem_limit: 300M
