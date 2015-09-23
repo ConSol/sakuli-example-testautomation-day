@@ -2,3 +2,6 @@ target
 .idea
 *.iml
 *.log
+*.bak
+**/_logs
+*.sakuli-steps-cache
