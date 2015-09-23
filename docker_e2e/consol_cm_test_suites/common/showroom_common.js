@@ -30,7 +30,7 @@ function setGlobals() {
     this.screen = new Region();
 
     this.BROWSER_NAME = "Firefox";
-    this.PDF_EDITOR_NAME = "pdfeditor";
+    this.PDF_EDITOR_NAME = "masterpdfeditor3";
 }
 
 function logout() {

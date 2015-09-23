@@ -48,7 +48,7 @@ var $Kommentar = "End2End";
 
 try {
 
-    //get the browser and maximize it
+	  //get the browser and maximize it
     var browser = new Application(BROWSER_NAME).focus();
     maximize(browser, "browser_maximize");
 
@@ -101,8 +101,13 @@ function checkPdf() {
     openPdfFile($pdfFileDownloadLocation);
 
     //open note
+	env.setSimilarity(0.3);
     screen.waitForImage("pdf2_note", 5).doubleClick();
-    screen.waitForImage("pdf2_in_note", 5).doubleClick();
+   	
+	env.setSimilarity(0.3);
+	screen.waitForImage("pdf2_in_note", 2).click();
+	env.setSimilarity(0.8);
+	
     //Copy string
     env.type("a", Key.CTRL);
     env.copyIntoClipboard();
@@ -147,10 +152,11 @@ function safePdf() {
     //navigate through the menu
     screen.waitForImage("pdf_file", 3).click();
     screen.waitForImage("pdf_save_as", 3).click();
+	
+	//masterpdfeditor3
+	screen.waitForImage("pdf_path", 10).click();
+	env.type("a",Key.CTRL);
 
-    screen.waitForImage("pdf_path", 10).click();
-
-    env.sleep(2);
     //set path and name
     env.paste($pdfPath);
     env.sleep(1);
@@ -168,20 +174,22 @@ function safePdf() {
 
 function writeAnnotation(pdfViewer) {
 
-    //click the annotations button from the toolbar, if visible
-    var exists = screen.exists("pdf_add_annotation", 5);
-    if (exists) {
-        exists.click();
-    } else {
-        //otherise maximize the program and try again
-        maximize(pdfViewer, "pdf_maximize");
-        screen.waitForImage("pdf_add_annotation", 5).click();
-    }
-    //
-    screen.waitForImage("pdf_sakuli", 2).click();
-    screen.waitForImage("pdf2_in_note", 2).click();
-    env.paste($Kommentar);
-    env.type(" - " + $Kommentator);
+	//click the annotations button from the toolbar, if visible
+	var exists = screen.exists("pdf_add_annotation", 5);
+	if (exists) {
+		exists.click();
+	} else {
+		//otherise maximize the program and try again
+		maximize(pdfViewer, "pdf_maximize");
+		screen.waitForImage("pdf_add_annotation", 5).click();
+	}
+	//
+	screen.waitForImage("pdf_sakuli", 2).click();
+	env.setSimilarity(0.3);
+	screen.waitForImage("pdf2_in_note", 2).click();
+	env.setSimilarity(0.8);
+	env.paste($Kommentar);
+	env.type(" - " + $Kommentator);
 }
 
 function uploadAttachment() {
