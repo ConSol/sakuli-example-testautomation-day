@@ -1,0 +1,7 @@
+// format:
+// testcase_folder/testcase.sah http://www.starturl.de
+//
+test_case_1/tc_ticket_comment.js http://sahi.example.com/_s_/dyn/Driver_initialized
+//
+// for additional testcases
+//test_case_2/next_testcase.js http://sahi.example.com/_s_/dyn/Driver_initialized
