@@ -24,5 +24,5 @@ function getPassword(user) {
 }
 
 function getUrlCmTestclient() {
-    return "ENTER YOUR URL"
+    return "ENTER YOUR URL";
 }

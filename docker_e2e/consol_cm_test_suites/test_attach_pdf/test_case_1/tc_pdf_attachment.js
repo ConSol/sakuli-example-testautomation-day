@@ -27,7 +27,7 @@ var testCase = new TestCase(60, 70);
 //the filname of the pdf to upload
 var pdfFileName = "ConSol_Solutions.pdf";
 //the username to login to the Consol CM Instance (the passwords for this testcase are always the same)
-var $username = "sakuli";
+var $username = "bearbeiter_pdf";
 
 //the path of the pdf to upload. the same path is used to safe the downloaded pdf file
 var $pdfPath = testCase.getTestCaseFolderPath() + "/pdf/";
