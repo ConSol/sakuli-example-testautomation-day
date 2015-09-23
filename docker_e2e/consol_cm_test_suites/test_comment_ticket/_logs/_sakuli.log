@@ -1,0 +1,438 @@
+INFO  [2015-09-23 16:04:14.251] - set logback configuration file '/root/sakuli/sakuli-v0.9.1-SNAPSHOT/config/sakuli-log-config.xml'
+INFO  [2015-09-23 16:04:14.259] - initialize test suite with id 'consol_cm_ticket_comment_function'
+INFO  [2015-09-23 16:04:14.278] - 
+--- TestSuite initialization: read test suite information of file "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/testsuite.suite" ----
+// format:
+// testcase_folder/testcase.sah http://www.starturl.de
+//
+test_case_1/tc_ticket_comment.js http://sahi.example.com/_s_/dyn/Driver_initialized
+//
+// for additional testcases
+//test_case_2/next_testcase.js http://sahi.example.com/_s_/dyn/Driver_initialized
+
+ --- End of File "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/testsuite.suite" ---
+INFO  [2015-09-23 16:04:14.280] - test suite with guid 'consol_cm_ticket_comment_function__2015_09_23_16_04_14_259' has been initialized!
+INFO  [2015-09-23 16:04:14.280] - Initialize Sahi Proxy! 
+INFO  [2015-09-23 16:04:14.280] - START Sahi-PROXY: Sahi-Home folder '/root/sakuli/sahi', Sahi-Configuration folder '/root/sakuli/sahi/userdata'
+INFO  [2015-09-23 16:04:14.505] - Start Sakuli-Test-Suite from folder "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket"
+INFO  [2015-09-23 16:04:14.506] - connect Sahi-TestRunner:http://localhost:9999
+INFO  [2015-09-23 16:04:14.509] - Sahi-Script-Runner starts!
+
+INFO  [2015-09-23 16:04:14.717] - Add RhinoScriptRunner to the JavaBackEnd
+INFO  [2015-09-23 16:04:16.841] - set default path for images to the test case folder "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1"
+INFO  [2015-09-23 16:04:16.866] - "test case not initialized" TestCaseAction.getIdFromPath() - convert the path of the test case file to a valid test case ID with arg(s) [/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1/undefined]
+INFO  [2015-09-23 16:04:16.867] - Return a test-case-id for "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1/undefined"
+INFO  [2015-09-23 16:04:16.867] - test-case-id = test_case_1
+INFO  [2015-09-23 16:04:16.867] - "test case not initialized" TestCaseAction.init() - init a new test case with arg(s) [test_case_1, 60, 70, [/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1]]
+INFO  [2015-09-23 16:04:16.867] - load all pics from "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1" in picLib
+INFO  [2015-09-23 16:04:16.888] - loaded image [id=browser_maximize, path=/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1/browser_maximize.png ]
+INFO  [2015-09-23 16:04:16.888] - set isRequestDelayActive=true
+INFO  [2015-09-23 16:04:16.889] - Now start to execute the test case 'test_case_1' ! 
+ ....
+ ...
+....
+INFO  [2015-09-23 16:04:16.903] - [info] runcmd: wmctrl -m 
+INFO  [2015-09-23 16:04:16.964] - [info] runcmd: xdotool version 
+INFO  [2015-09-23 16:04:16.976] - [error] RunTimeAPI: fatal error: java.io.IOException: Cannot run program "xdotool": error=2, No such file or directory
+INFO  [2015-09-23 16:04:16.977] - "Firefox" Application.focusWindow() - focus application in window with arg(s) [0]
+INFO  [2015-09-23 16:04:16.981] - [log] App.focus:  [0:Firefox]
+INFO  [2015-09-23 16:04:17.982] - "Firefox" Application.getRegion() - get a Region object from the application
+INFO  [2015-09-23 16:04:17.992] - "R[0,75 1280x922]@S(0)" Region.move() - move this region with arg(s) [0, -40]
+INFO  [2015-09-23 16:04:17.993] - "R[0,35 1280x922]@S(0)" Region.setH() - set new height for this region with arg(s) [40]
+INFO  [2015-09-23 16:04:17.994] - "R[0,35 1280x40]@S(0)" Region.exists() - check if this region is visible with arg(s) [browser_maximize, 1]
+INFO  [2015-09-23 16:04:19.111] - _navigateTo("http://10.4.14.128:8080/cm-client/");
+INFO  [2015-09-23 16:04:19.645] - _call(top.location.reload());
+INFO  [2015-09-23 16:04:19.746] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Load Consol CM, 1443017056867, 1443017059746, 0]
+INFO  [2015-09-23 16:04:19.747] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Load, 1443017059746, 1443017059747, 0]
+INFO  [2015-09-23 16:04:19.747] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [2]
+INFO  [2015-09-23 16:04:21.780] - _focus(_textbox("username"));
+INFO  [2015-09-23 16:04:21.893] - _click(_textbox("username"));
+INFO  [2015-09-23 16:04:21.951] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:04:22.451] - sahi-proxy-timer modified to 1020 ms
+INFO  [2015-09-23 16:04:22.451] - Environment.type() - type over system keyboard with arg(s) [sakuli]
+INFO  [2015-09-23 16:04:22.454] - [log]  TYPE "sakuli"
+INFO  [2015-09-23 16:04:23.013] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:04:23.040] - _sahi.setServerVar('___lastValue___1443017063015', _getValue(_textbox("username")));
+INFO  [2015-09-23 16:04:23.155] - _setValue(_textbox("username"), "sakuli");
+INFO  [2015-09-23 16:04:23.270] - _setValue(_password("password"), "5akuli");
+INFO  [2015-09-23 16:04:23.321] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [1]
+INFO  [2015-09-23 16:04:24.323] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:04:24.823] - sahi-proxy-timer modified to 170 ms
+INFO  [2015-09-23 16:04:24.824] - Environment.type() - type over system keyboard with arg(s) [
+]
+INFO  [2015-09-23 16:04:24.825] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:04:24.826] - [log]  TYPE "#ENTER."
+INFO  [2015-09-23 16:04:24.826] - [profile] TLap: (0.001 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:04:24.827] - [profile] TLap: (0.001 sec): (before typing) Region.type
+INFO  [2015-09-23 16:04:24.945] - [profile] TLap: (0.120 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:04:25.095] - [profile] TEnd (0.269 sec): Region.type
+INFO  [2015-09-23 16:04:25.095] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:04:25.095] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:04:25.604] - sahi-proxy-timer modified to 170 ms
+INFO  [2015-09-23 16:04:25.604] - Environment.type() - type over system keyboard with arg(s) [
+]
+INFO  [2015-09-23 16:04:25.605] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:04:25.605] - [log]  TYPE "#ENTER."
+INFO  [2015-09-23 16:04:25.605] - [profile] TLap: (0.000 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:04:25.605] - [profile] TLap: (0.000 sec): (before typing) Region.type
+INFO  [2015-09-23 16:04:25.752] - [profile] TLap: (0.146 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:04:25.757] - [profile] TEnd (0.152 sec): Region.type
+INFO  [2015-09-23 16:04:25.757] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:04:25.826] - _highlight(_span("Angemeldet als:"));
+INFO  [2015-09-23 16:04:25.859] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [1]
+INFO  [2015-09-23 16:04:26.903] - _highlight(_span("user"));
+INFO  [2015-09-23 16:04:26.960] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Login, 1443017059747, 1443017066960, 0]
+INFO  [2015-09-23 16:04:26.961] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Login, 1443017066960, 1443017066961, 0]
+INFO  [2015-09-23 16:04:27.021] - _focus(_textbox("navBar:navSearch:searchField"));
+INFO  [2015-09-23 16:04:27.063] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [2]
+INFO  [2015-09-23 16:04:29.064] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:04:29.564] - sahi-proxy-timer modified to 340 ms
+INFO  [2015-09-23 16:04:29.565] - Environment.type() - type over system keyboard with arg(s) [Sa]
+INFO  [2015-09-23 16:04:29.565] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:04:29.565] - [log]  TYPE "Sa"
+INFO  [2015-09-23 16:04:29.565] - [profile] TLap: (0.000 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:04:29.565] - [profile] TLap: (0.000 sec): (before typing) Region.type
+INFO  [2015-09-23 16:04:29.779] - [profile] TLap: (0.214 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:04:29.781] - [profile] TEnd (0.215 sec): Region.type
+INFO  [2015-09-23 16:04:29.781] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:04:29.782] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [3]
+INFO  [2015-09-23 16:04:32.798] - _highlight(_div({title: "/528./"}, (_in(_table("gs_dropdown")))));
+INFO  [2015-09-23 16:04:32.884] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [2]
+INFO  [2015-09-23 16:04:35.000] - _click(_div({title: "/528./"}, (_in(_table("gs_dropdown")))));
+INFO  [2015-09-23 16:04:35.086] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [5]
+INFO  [2015-09-23 16:04:40.087] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Search, 1443017066961, 1443017080087, 30]
+INFO  [2015-09-23 16:04:40.088] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Search Ticket 528, 1443017080087, 1443017080088, 0]
+INFO  [2015-09-23 16:04:40.110] - _highlight(_link("Kommentar"));
+INFO  [2015-09-23 16:04:40.227] - _click(_link("Kommentar"));
+INFO  [2015-09-23 16:04:41.168] - _doubleClick(_link("Linksbündig"));
+INFO  [2015-09-23 16:04:41.225] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:04:41.725] - sahi-proxy-timer modified to 8330 ms
+INFO  [2015-09-23 16:04:41.726] - Environment.type() - type over system keyboard with arg(s) [Auch Sakuli ist begeistert und will jetzt Kaffee!]
+INFO  [2015-09-23 16:04:41.726] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:04:41.727] - [log]  TYPE "Auch Sakuli ist begeistert und will jetzt Kaffee!"
+INFO  [2015-09-23 16:04:41.727] - [profile] TLap: (0.001 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:04:41.728] - [profile] TLap: (0.001 sec): (before typing) Region.type
+INFO  [2015-09-23 16:04:46.540] - [profile] TLap: (4.813 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:04:46.542] - [profile] TEnd (4.816 sec): Region.type
+INFO  [2015-09-23 16:04:46.543] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:04:49.619] - _highlight(_button("Hinzufügen"));
+INFO  [2015-09-23 16:04:49.753] - _click(_button("Hinzufügen"));
+INFO  [2015-09-23 16:04:49.766] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Add Comment, 1443017080088, 1443017089766, 0]
+INFO  [2015-09-23 16:04:50.910] - _highlight(_div("submain historygroup"));
+INFO  [2015-09-23 16:04:50.999] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [1]
+INFO  [2015-09-23 16:04:52.467] - _sahi.setServerVar('___lastValue___1443017092007', _getText(_div("/richContent_.*/", _div("submain historygroup"))));
+INFO  [2015-09-23 16:04:52.906] - _highlight(_div("/richContent_.*/", _div("submain historygroup")));
+INFO  [2015-09-23 16:04:52.939] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Check Comment, 1443017089766, 1443017092939, 0]
+INFO  [2015-09-23 16:04:52.940] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [3]
+INFO  [2015-09-23 16:04:56.025] - _click(_image("logout.png"));
+INFO  [2015-09-23 16:04:56.041] - =========== SAVE Test Case 'test_case_1' ==================
+INFO  [2015-09-23 16:04:56.329] - _sahi.setServerVar('lastURL', window.document.location.href);
+INFO  [2015-09-23 16:04:56.443] - _sahi.setServerVar('browser', navigator.userAgent);
+INFO  [2015-09-23 16:04:56.444] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.saveResult() - save the result of the current test case with arg(s) [test_case_1, 1443017056867, 1443017096041, http://10.4.14.128:8080/cm-client/login?signoutRedirect=true, Mozilla/5.0 (X11, Linux x86_64, rv:38.0) Gecko/20100101 Firefox/38.0]
+INFO  [2015-09-23 16:04:56.445] - Total Memory in JVM (Xmx) is: 446.625 MB;<br/>Memory currently in use is: 29.3125 MB;<br/>Memory increment during this test is: 0.25 MB
+INFO  [2015-09-23 16:05:00.712] - test suite 'consol_cm_ticket_comment_function' stopped at 2015_09_23_16_05_00_712
+INFO  [2015-09-23 16:05:00.712] - Sahi-Script-Runner executed with SUCCESS
+INFO  [2015-09-23 16:05:00.712] - test suite finished
+INFO  [2015-09-23 16:05:00.712] - SHUTDOWN SAHI-Proxy SUCCESSFULLY
+INFO  [2015-09-23 16:05:00.746] - 
+=========== RESULT of SAKULI Testsuite "consol_cm_ticket_comment_function" - OK =================
+test suite id: consol_cm_ticket_comment_function
+guid: consol_cm_ticket_comment_function__2015_09_23_16_04_14_259
+name: CM-Showroom Comment
+RESULT STATE: OK
+result code: 0
+db primary key: -1
+duration: 46.453 sec.
+warning time: 120 sec.
+critical time: 140 sec.
+start time: 23-09-2015 16:04:14
+end time: 23-09-2015 16:05:00
+db primary key of job table: -1
+browser: Mozilla/5.0 (X11, Linux x86_64, rv:38.0) Gecko/20100101 Firefox/38.0
+	======== test case "test_case_1" ended with OK =================
+	test case id: test_case_1
+	name: test_case_1
+	RESULT STATE: OK
+	result code: 0
+	db primary key: -1
+	duration: 39.174 sec.
+	warning time: 60 sec.
+	critical time: 70 sec.
+	start time: 23-09-2015 16:04:16
+	end time: 23-09-2015 16:04:56
+	start URL: http://sahi.example.com/_s_/dyn/Driver_initialized
+	last URL: http://10.4.14.128:8080/cm-client/login?signoutRedirect=true
+		======== test case step "Load_Consol_CM" ended with OK =================
+		name: Load_Consol_CM
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 2.879 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:04:16
+		end time: 23-09-2015 16:04:19
+		======== test case step "Load" ended with OK =================
+		name: Load
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 0.001 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:04:19
+		end time: 23-09-2015 16:04:19
+		======== test case step "Login" ended with OK =================
+		name: Login
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 0.001 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:04:26
+		end time: 23-09-2015 16:04:26
+		======== test case step "Search" ended with OK =================
+		name: Search
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 13.126 sec.
+		warning time: 30 sec.
+		start time: 23-09-2015 16:04:26
+		end time: 23-09-2015 16:04:40
+		======== test case step "Search_Ticket_528" ended with OK =================
+		name: Search_Ticket_528
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 0.001 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:04:40
+		end time: 23-09-2015 16:04:40
+		======== test case step "Add_Comment" ended with OK =================
+		name: Add_Comment
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 9.678 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:04:40
+		end time: 23-09-2015 16:04:49
+		======== test case step "Check_Comment" ended with OK =================
+		name: Check_Comment
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 3.173 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:04:49
+		end time: 23-09-2015 16:04:52
+===========  SAKULI Testsuite "consol_cm_ticket_comment_function" execution FINISHED - OK ======================
+
+INFO  [2015-09-23 16:14:58.369] - set logback configuration file '/root/sakuli/sakuli-v0.9.1-SNAPSHOT/config/sakuli-log-config.xml'
+INFO  [2015-09-23 16:14:58.376] - initialize test suite with id 'consol_cm_ticket_comment_function'
+INFO  [2015-09-23 16:14:58.394] - 
+--- TestSuite initialization: read test suite information of file "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/testsuite.suite" ----
+// format:
+// testcase_folder/testcase.sah http://www.starturl.de
+//
+test_case_1/tc_ticket_comment.js http://sahi.example.com/_s_/dyn/Driver_initialized
+//
+// for additional testcases
+//test_case_2/next_testcase.js http://sahi.example.com/_s_/dyn/Driver_initialized
+
+ --- End of File "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/testsuite.suite" ---
+INFO  [2015-09-23 16:14:58.397] - test suite with guid 'consol_cm_ticket_comment_function__2015_09_23_16_14_58_376' has been initialized!
+INFO  [2015-09-23 16:14:58.397] - Initialize Sahi Proxy! 
+INFO  [2015-09-23 16:14:58.398] - START Sahi-PROXY: Sahi-Home folder '/root/sakuli/sahi', Sahi-Configuration folder '/root/sakuli/sahi/userdata'
+INFO  [2015-09-23 16:14:58.621] - Start Sakuli-Test-Suite from folder "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket"
+INFO  [2015-09-23 16:14:58.621] - connect Sahi-TestRunner:http://localhost:9999
+INFO  [2015-09-23 16:14:58.624] - Sahi-Script-Runner starts!
+
+INFO  [2015-09-23 16:14:58.842] - Add RhinoScriptRunner to the JavaBackEnd
+INFO  [2015-09-23 16:15:00.869] - set default path for images to the test case folder "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1"
+INFO  [2015-09-23 16:15:00.879] - "test case not initialized" TestCaseAction.getIdFromPath() - convert the path of the test case file to a valid test case ID with arg(s) [/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1/undefined]
+INFO  [2015-09-23 16:15:00.880] - Return a test-case-id for "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1/undefined"
+INFO  [2015-09-23 16:15:00.880] - test-case-id = test_case_1
+INFO  [2015-09-23 16:15:00.880] - "test case not initialized" TestCaseAction.init() - init a new test case with arg(s) [test_case_1, 60, 70, [/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1]]
+INFO  [2015-09-23 16:15:00.881] - load all pics from "/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1" in picLib
+INFO  [2015-09-23 16:15:00.897] - loaded image [id=browser_maximize, path=/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1/browser_maximize.png ]
+INFO  [2015-09-23 16:15:00.897] - internal image library: '/root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_comment_ticket/test_case_1/.sakuli-steps-cache' is no .png picture
+INFO  [2015-09-23 16:15:00.897] - set isRequestDelayActive=true
+INFO  [2015-09-23 16:15:00.910] - Now start to execute the test case 'test_case_1' ! 
+ ....
+ ...
+....
+INFO  [2015-09-23 16:15:00.912] - [info] runcmd: wmctrl -m 
+INFO  [2015-09-23 16:15:00.927] - [info] runcmd: xdotool version 
+INFO  [2015-09-23 16:15:00.938] - [error] RunTimeAPI: fatal error: java.io.IOException: Cannot run program "xdotool": error=2, No such file or directory
+INFO  [2015-09-23 16:15:00.939] - "Firefox" Application.focusWindow() - focus application in window with arg(s) [0]
+INFO  [2015-09-23 16:15:00.954] - [log] App.focus:  [0:Firefox]
+INFO  [2015-09-23 16:15:01.955] - "Firefox" Application.getRegion() - get a Region object from the application
+INFO  [2015-09-23 16:15:01.961] - "R[0,75 1280x922]@S(0)" Region.move() - move this region with arg(s) [0, -40]
+INFO  [2015-09-23 16:15:01.962] - "R[0,35 1280x922]@S(0)" Region.setH() - set new height for this region with arg(s) [40]
+INFO  [2015-09-23 16:15:01.963] - "R[0,35 1280x40]@S(0)" Region.exists() - check if this region is visible with arg(s) [browser_maximize, 1]
+INFO  [2015-09-23 16:15:03.093] - _navigateTo("http://10.4.14.128:8080/cm-client/");
+INFO  [2015-09-23 16:15:03.655] - _call(top.location.reload());
+INFO  [2015-09-23 16:15:03.736] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Load, 1443017700880, 1443017703736, 0]
+INFO  [2015-09-23 16:15:03.737] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [2]
+INFO  [2015-09-23 16:15:05.886] - _focus(_textbox("username"));
+INFO  [2015-09-23 16:15:06.040] - _click(_textbox("username"));
+INFO  [2015-09-23 16:15:06.042] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:15:06.543] - sahi-proxy-timer modified to 1020 ms
+INFO  [2015-09-23 16:15:06.543] - Environment.type() - type over system keyboard with arg(s) [sakuli]
+INFO  [2015-09-23 16:15:06.546] - [log]  TYPE "sakuli"
+INFO  [2015-09-23 16:15:07.109] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:15:07.228] - _sahi.setServerVar('___lastValue___1443017707111', _getValue(_textbox("username")));
+INFO  [2015-09-23 16:15:07.389] - _setValue(_textbox("username"), "sakuli");
+INFO  [2015-09-23 16:15:07.543] - _setValue(_password("password"), "5akuli");
+INFO  [2015-09-23 16:15:07.616] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [1]
+INFO  [2015-09-23 16:15:08.617] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:15:09.117] - sahi-proxy-timer modified to 170 ms
+INFO  [2015-09-23 16:15:09.118] - Environment.type() - type over system keyboard with arg(s) [
+]
+INFO  [2015-09-23 16:15:09.118] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:15:09.118] - [log]  TYPE "#ENTER."
+INFO  [2015-09-23 16:15:09.119] - [profile] TLap: (0.000 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:15:09.119] - [profile] TLap: (0.001 sec): (before typing) Region.type
+INFO  [2015-09-23 16:15:09.225] - [profile] TLap: (0.107 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:15:09.226] - [profile] TEnd (0.108 sec): Region.type
+INFO  [2015-09-23 16:15:09.227] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:15:09.227] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:15:09.780] - sahi-proxy-timer modified to 170 ms
+INFO  [2015-09-23 16:15:09.781] - Environment.type() - type over system keyboard with arg(s) [
+]
+INFO  [2015-09-23 16:15:09.781] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:15:09.781] - [log]  TYPE "#ENTER."
+INFO  [2015-09-23 16:15:09.781] - [profile] TLap: (0.000 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:15:09.781] - [profile] TLap: (0.000 sec): (before typing) Region.type
+INFO  [2015-09-23 16:15:09.885] - [profile] TLap: (0.104 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:15:09.887] - [profile] TEnd (0.105 sec): Region.type
+INFO  [2015-09-23 16:15:09.887] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:15:10.218] - _highlight(_span("Angemeldet als:"));
+INFO  [2015-09-23 16:15:10.298] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [1]
+INFO  [2015-09-23 16:15:11.325] - _highlight(_span("user"));
+INFO  [2015-09-23 16:15:11.400] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Login, 1443017703736, 1443017711400, 0]
+INFO  [2015-09-23 16:15:11.440] - _focus(_textbox("navBar:navSearch:searchField"));
+INFO  [2015-09-23 16:15:11.501] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [2]
+INFO  [2015-09-23 16:15:13.503] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:15:14.003] - sahi-proxy-timer modified to 340 ms
+INFO  [2015-09-23 16:15:14.004] - Environment.type() - type over system keyboard with arg(s) [Sa]
+INFO  [2015-09-23 16:15:14.004] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:15:14.004] - [log]  TYPE "Sa"
+INFO  [2015-09-23 16:15:14.005] - [profile] TLap: (0.001 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:15:14.005] - [profile] TLap: (0.001 sec): (before typing) Region.type
+INFO  [2015-09-23 16:15:14.219] - [profile] TLap: (0.215 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:15:14.220] - [profile] TEnd (0.216 sec): Region.type
+INFO  [2015-09-23 16:15:14.221] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:15:14.221] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [3]
+INFO  [2015-09-23 16:15:17.334] - _highlight(_div({title: "/528./"}, (_in(_table("gs_dropdown")))));
+INFO  [2015-09-23 16:15:17.424] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [2]
+INFO  [2015-09-23 16:15:19.459] - _click(_div({title: "/528./"}, (_in(_table("gs_dropdown")))));
+INFO  [2015-09-23 16:15:19.526] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [5]
+INFO  [2015-09-23 16:15:24.527] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Search Ticket 528, 1443017711400, 1443017724527, 0]
+INFO  [2015-09-23 16:15:24.534] - _highlight(_link("Kommentar"));
+INFO  [2015-09-23 16:15:24.651] - _click(_link("Kommentar"));
+INFO  [2015-09-23 16:15:25.574] - _doubleClick(_link("Linksbündig"));
+INFO  [2015-09-23 16:15:25.666] - wait 500ms for sahi refresh
+INFO  [2015-09-23 16:15:26.166] - sahi-proxy-timer modified to 8330 ms
+INFO  [2015-09-23 16:15:26.167] - Environment.type() - type over system keyboard with arg(s) [Auch Sakuli ist begeistert und will jetzt Kaffee!]
+INFO  [2015-09-23 16:15:26.167] - [profile] TStart: Region.type
+INFO  [2015-09-23 16:15:26.167] - [log]  TYPE "Auch Sakuli ist begeistert und will jetzt Kaffee!"
+INFO  [2015-09-23 16:15:26.167] - [profile] TLap: (0.000 sec): (before getting Robot) Region.type
+INFO  [2015-09-23 16:15:26.168] - [profile] TLap: (0.000 sec): (before typing) Region.type
+INFO  [2015-09-23 16:15:30.977] - [profile] TLap: (4.809 sec): (after typing, before waitForIdle) Region.type
+INFO  [2015-09-23 16:15:30.978] - [profile] TEnd (4.811 sec): Region.type
+INFO  [2015-09-23 16:15:30.979] - reset sahi-proxy-timer
+INFO  [2015-09-23 16:15:34.030] - _highlight(_button("Hinzufügen"));
+INFO  [2015-09-23 16:15:34.158] - _click(_button("Hinzufügen"));
+INFO  [2015-09-23 16:15:34.191] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Add Comment, 1443017724527, 1443017734191, 0]
+INFO  [2015-09-23 16:15:35.332] - _highlight(_div("submain historygroup"));
+INFO  [2015-09-23 16:15:35.398] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [1]
+INFO  [2015-09-23 16:15:36.864] - _sahi.setServerVar('___lastValue___1443017736400', _getText(_div("/richContent_.*/", _div("submain historygroup"))));
+INFO  [2015-09-23 16:15:37.302] - _highlight(_div("/richContent_.*/", _div("submain historygroup")));
+INFO  [2015-09-23 16:15:37.331] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.addTestCaseStep() - add a step to the current test case with arg(s) [Check Comment, 1443017734191, 1443017737331, 0]
+INFO  [2015-09-23 16:15:37.332] - Environment.sleep() - sleep and do nothing for x seconds with arg(s) [3]
+INFO  [2015-09-23 16:15:40.413] - _click(_image("logout.png"));
+INFO  [2015-09-23 16:15:40.433] - =========== SAVE Test Case 'test_case_1' ==================
+INFO  [2015-09-23 16:15:40.784] - _sahi.setServerVar('lastURL', window.document.location.href);
+INFO  [2015-09-23 16:15:40.891] - _sahi.setServerVar('browser', navigator.userAgent);
+INFO  [2015-09-23 16:15:40.938] - "test case [id=test_case_1, name=test_case_1]" TestCaseAction.saveResult() - save the result of the current test case with arg(s) [test_case_1, 1443017700880, 1443017740433, http://10.4.14.128:8080/cm-client/login?signoutRedirect=true, Mozilla/5.0 (X11, Linux x86_64, rv:38.0) Gecko/20100101 Firefox/38.0]
+INFO  [2015-09-23 16:15:40.940] - Total Memory in JVM (Xmx) is: 446.625 MB;<br/>Memory currently in use is: 29.3125 MB;<br/>Memory increment during this test is: 0.25 MB
+INFO  [2015-09-23 16:15:44.856] - test suite 'consol_cm_ticket_comment_function' stopped at 2015_09_23_16_15_44_856
+INFO  [2015-09-23 16:15:44.856] - Sahi-Script-Runner executed with SUCCESS
+INFO  [2015-09-23 16:15:44.856] - test suite finished
+INFO  [2015-09-23 16:15:44.857] - SHUTDOWN SAHI-Proxy SUCCESSFULLY
+INFO  [2015-09-23 16:15:44.884] - 
+=========== RESULT of SAKULI Testsuite "consol_cm_ticket_comment_function" - OK =================
+test suite id: consol_cm_ticket_comment_function
+guid: consol_cm_ticket_comment_function__2015_09_23_16_14_58_376
+name: CM-Showroom Comment
+RESULT STATE: OK
+result code: 0
+db primary key: -1
+duration: 46.48 sec.
+warning time: 120 sec.
+critical time: 140 sec.
+start time: 23-09-2015 16:14:58
+end time: 23-09-2015 16:15:44
+db primary key of job table: -1
+browser: Mozilla/5.0 (X11, Linux x86_64, rv:38.0) Gecko/20100101 Firefox/38.0
+	======== test case "test_case_1" ended with OK =================
+	test case id: test_case_1
+	name: test_case_1
+	RESULT STATE: OK
+	result code: 0
+	db primary key: -1
+	duration: 39.553 sec.
+	warning time: 60 sec.
+	critical time: 70 sec.
+	start time: 23-09-2015 16:15:00
+	end time: 23-09-2015 16:15:40
+	start URL: http://sahi.example.com/_s_/dyn/Driver_initialized
+	last URL: http://10.4.14.128:8080/cm-client/login?signoutRedirect=true
+		======== test case step "Load" ended with OK =================
+		name: Load
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 2.856 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:15:00
+		end time: 23-09-2015 16:15:03
+		======== test case step "Login" ended with OK =================
+		name: Login
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 7.664 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:15:03
+		end time: 23-09-2015 16:15:11
+		======== test case step "Search_Ticket_528" ended with OK =================
+		name: Search_Ticket_528
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 13.127 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:15:11
+		end time: 23-09-2015 16:15:24
+		======== test case step "Add_Comment" ended with OK =================
+		name: Add_Comment
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 9.664 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:15:24
+		end time: 23-09-2015 16:15:34
+		======== test case step "Check_Comment" ended with OK =================
+		name: Check_Comment
+		RESULT STATE: OK
+		result code: 0
+		db primary key: -1
+		duration: 3.14 sec.
+		warning time: 0 sec.
+		start time: 23-09-2015 16:15:34
+		end time: 23-09-2015 16:15:37
+===========  SAKULI Testsuite "consol_cm_ticket_comment_function" execution FINISHED - OK ======================
+
