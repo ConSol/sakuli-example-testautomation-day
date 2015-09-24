@@ -58,9 +58,9 @@ try {
    
     load();
     login(3);
-	
+		
 	//go directly to the preprepared ticket
-    var $URL = getUrlCmTestclient() + "ticket/ticket_id/532";
+    var $URL = getUrlCmTestclient() + "ticket/ticket_name/532";
     _navigateTo($URL);
 	testCase.endOfStep("Navigate to Ticket");
     
@@ -80,6 +80,12 @@ try {
 }
 finally {
     end();
+}
+
+function getTimeString()
+{
+	var d = new Date();
+	return (d.getHours()) + ":" + d.getMinutes();
 }
 
 
@@ -146,7 +152,6 @@ function safePdf() {
 
 function uploadPDF() {
 
-    setfileName();
     _click(_link("Attachment"));
     env.sleep(1);
     _focus(_textbox(0, _rightOf(_cell("Beschreibung"))));
@@ -178,7 +183,7 @@ function downloadPDF() {
     _highlight(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
     _click(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
     //sakuli *for now* cant open the pdf directly, so it is downloaded and sent to the pdf viewer
-    var $pdfFileDownloadLocation = $pdfPath + "_download_" + pdfFileName;
+    var $pdfFileDownloadLocation = $pdfPath + "_download_" + setfileName();
     _saveDownloadedAs($pdfFileDownloadLocation);
 
     openPdfFile($pdfFileDownloadLocation);  
@@ -243,5 +248,5 @@ function clickLocationButton() {
 
 function setfileName() {
 
-    $fileName = $Kommentator + "_" + pdfFileName;
+    $fileName = $Kommentator + "_" + getTimeString();
 }
