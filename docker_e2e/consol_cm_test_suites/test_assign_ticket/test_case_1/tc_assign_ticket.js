@@ -48,7 +48,7 @@ try {
 	testCase.endOfStep("Create Ticket");
 
 	logout();
-	testCase.endOfStep("Logout User 01);
+	testCase.endOfStep("Logout User 01");
 
     /////////// User 02 /////////////////
 

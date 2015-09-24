@@ -52,8 +52,10 @@ function login(attemt) {
     }
     _setValue(_password("password"), $password);
     env.sleep(1);
-    env.type(Key.ENTER);
-    env.type(Key.ENTER);
+    _highlight(_submit("submit button"));
+    _click(_submit("submit button"));
+
+
     try {
         _highlight(_span("Angemeldet als:"));
         env.sleep(1);

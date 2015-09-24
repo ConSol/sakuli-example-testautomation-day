@@ -8,7 +8,6 @@ ENV REFRESHED_AT 2015-09-22
 RUN echo 'user_pref("intl.accept_languages", "de, en-US, en");' >> /root/sakuli/sahi/config/ff_profile_template/prefs.js
 
 ### Install and config Master PDF
-RUN yum install -y ftp://ftp.pbone.net/mirror/ftp5.gwdg.de/pub/opensuse/repositories/home:/Kenzy:/packages/Fedora_19/x86_64/pdfeditor-1.8.70-2.1.x86_64.rpm
+RUN yum install -y http://get.code-industry.net/public/master-pdf-editor3-3.4.03-1.x86_64.rpm
 RUN mkdir -p '/root/.config/Code Industry' \
-   && echo -e 'check_updates=0' > '/root/.config/Code Industry/Master PDF Editor.conf'
-
+   && echo -e 'check_updates=0\nshow%20ObjectInspector=false' > '/root/.config/Code Industry/Master PDF Editor.conf'
