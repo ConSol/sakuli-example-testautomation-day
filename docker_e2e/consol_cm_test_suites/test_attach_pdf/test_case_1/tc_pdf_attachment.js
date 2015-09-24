@@ -60,7 +60,7 @@ try {
     login(3);
 		
 	//go directly to the preprepared ticket
-    var $URL = getUrlCmTestclient() + "ticket/ticket_name/532";
+    var $URL = getUrlCmTestclient() + "ticket/ticket_name/1155";
     _navigateTo($URL);
 	testCase.endOfStep("Navigate to Ticket");
     
