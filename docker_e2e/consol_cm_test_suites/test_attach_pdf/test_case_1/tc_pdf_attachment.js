@@ -22,7 +22,7 @@ _dynamicInclude("../../common/showroom_common.js");
 _dynamicInclude("../../common/login_credentials.js");
 
 
-var testCase = new TestCase(60, 70);
+var testCase = new TestCase(100, 120);
 
 //the filname of the pdf to upload
 var pdfFileName = "ConSol_Solutions.pdf";
