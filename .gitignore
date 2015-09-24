@@ -5,3 +5,4 @@ target
 *.bak
 **/_logs
 *.sakuli-steps-cache
+*~
