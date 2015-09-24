@@ -1,1 +1,1 @@
-# sakuli-example-testautomation-day
+## sakuli-example-testautomation-day
