@@ -32,7 +32,7 @@ var $username = "bearbeiter_pdf";
 //the path of the pdf to upload. the same path is used to safe the downloaded pdf file
 var $pdfPath = testCase.getTestCaseFolderPath() + "/pdf/";
 //the variable to safe the attachments name in
-var $fileName = "";
+var $attachmentName = "";
 
 
 //////////////////////////////////////////////////////////////////
@@ -48,32 +48,26 @@ var $Kommentar = "End2End";
 
 try {
 
-	var browser = new Application(BROWSER_NAME).focus();
+	  //get the browser and maximize it
+    var browser = new Application(BROWSER_NAME).focus();
     maximize(browser, "browser_maximize");
 
-    createPDF();
-	testCase.endOfStep("Create PDF");
-
+    //open the pdf and write the annotation
+    navigatePDF();
     env.sleep(3);
-   
+    //load the page and login
     load();
     login(3);
-	
-	//go directly to the preprepared ticket
+
+    //go directly to the preprepared ticket
     var $URL = getUrlCmTestclient() + "ticket/ticket_id/532";
     _navigateTo($URL);
-	testCase.endOfStep("Navigate to Ticket");
-    
-    //upload pdf as attachment
-    uploadPDF();
-	testCase.endOfStep("Upload PDF");
-    
-    downloadPDF();
-	testCase.endOfStep("Download PDF");
-    
-	checkPDF();
-	testCase.endOfStep("Check PDF");
-    
+
+    //upload the new attachment to the ticket
+    uploadAttachment();
+
+    //download the pdf and check its correctness
+    checkPdf();
 
 } catch (e) {
     testCase.handleException(e);
@@ -82,10 +76,62 @@ finally {
     end();
 }
 
+function setAttachmentName() {
 
-function createPDF() {
+    $attachmentName = $Kommentator + "_" + pdfFileName;
+}
 
-    setfileName();
+function checkPdf() {
+
+    //click the link for attachments
+    _click(_image("/arrow.gif/", _in(_div("acim_history_container", _in(_div("submain historygroup"))))));
+    env.sleep(1);
+    //if the next link doesn't show, we click again
+    if (!_exists(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))))) {
+        _click(_image("/arrow.gif/", _in(_div("acim_history_container", _in(_div("submain historygroup"))))));
+        env.sleep(1);
+    }
+
+    _highlight(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
+    _click(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
+    //sakuli *for now* cant open the pdf directly, so it is downloaded and sent to the pdf viewer
+    var $pdfFileDownloadLocation = $pdfPath + "_download_" + pdfFileName;
+    _saveDownloadedAs($pdfFileDownloadLocation);
+
+    openPdfFile($pdfFileDownloadLocation);
+
+    //open note
+	env.setSimilarity(0.3);
+    screen.waitForImage("pdf2_note", 5).doubleClick();
+   	
+	env.setSimilarity(0.3);
+	screen.waitForImage("pdf2_in_note", 2).click();
+	env.setSimilarity(0.8);
+	
+    //Copy string
+    env.type("a", Key.CTRL);
+    env.copyIntoClipboard();
+    var copy = env.getClipboard();
+    env.paste(copy);
+    //test string and print success
+    if ($Kommentar + " - " + $Kommentator) {
+        env.type(". . .");
+        env.paste(Key.ENTER);
+        env.paste(Key.ENTER);
+        env.paste("!! Success !!");
+        testCase.endOfStep("Downloaded PDF: Check Annotation");
+    }
+    else {
+        throw ("Downloaded PDF: Annotation-String does not Match.");
+    }
+
+    env.sleep(9);
+    killApp(PDF_EDITOR_NAME);
+}
+
+function navigatePDF() {
+
+    setAttachmentName();
     //load pdf and focus application
     var pdfFileLocation = $pdfPath + pdfFileName;
     var pdfViewer = openPdfFile(pdfFileLocation);
@@ -95,6 +141,35 @@ function createPDF() {
     safePdf();
 
     killApp(PDF_EDITOR_NAME);
+
+    testCase.endOfStep("Create/Navigate Pdf");
+}
+
+function safePdf() {
+
+    //create the name
+    setAttachmentName();
+    //navigate through the menu
+    screen.waitForImage("pdf_file", 3).click();
+    screen.waitForImage("pdf_save_as", 3).click();
+	
+	//masterpdfeditor3
+	screen.waitForImage("pdf_path", 10).click();
+	env.type("a",Key.CTRL);
+
+    //set path and name
+    env.paste($pdfPath);
+    env.sleep(1);
+    env.paste($attachmentName);
+    env.sleep(1);
+    //press safe
+    screen.waitForImage("pdf_safe_button", 2).click();
+
+    //replace file if it already exists
+    var exists = screen.exists("replace", 1);
+    if (exists) {
+        exists.click();
+    }
 }
 
 function writeAnnotation(pdfViewer) {
@@ -117,36 +192,9 @@ function writeAnnotation(pdfViewer) {
 	env.type(" - " + $Kommentator);
 }
 
-function safePdf() {
+function uploadAttachment() {
 
-    //create the name
-    setfileName();
-    //navigate through the menu
-    screen.waitForImage("pdf_file", 3).click();
-    screen.waitForImage("pdf_save_as", 3).click();
-	
-	//masterpdfeditor3
-	screen.waitForImage("pdf_path", 10).click();
-	env.type("a",Key.CTRL);
-
-    //set path and name
-    env.paste($pdfPath);
-    env.sleep(1);
-    env.paste($fileName);
-    env.sleep(1);
-    //press safe
-    screen.waitForImage("pdf_safe_button", 2).click();
-
-    //replace file if it already exists
-    var exists = screen.exists("replace", 1);
-    if (exists) {
-        exists.click();
-    }
-}
-
-function uploadPDF() {
-
-    setfileName();
+    setAttachmentName();
     _click(_link("Attachment"));
     env.sleep(1);
     _focus(_textbox(0, _rightOf(_cell("Beschreibung"))));
@@ -156,64 +204,13 @@ function uploadPDF() {
 
     clickLocationButton();
     env.sleep(1);
-    env.paste($pdfPath + $fileName);
+    env.paste($pdfPath + $attachmentName);
 
     env.type(Key.ENTER);
     env.sleep(1);
     _click(_button("Hinzufügen"));
-}
 
-
-function downloadPDF() {
-
-    //click the link for attachments
-    _click(_image("/arrow.gif/", _in(_div("acim_history_container", _in(_div("submain historygroup"))))));
-    env.sleep(1);
-    //if the next link doesn't show, we click again
-    if (!_exists(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))))) {
-        _click(_image("/arrow.gif/", _in(_div("acim_history_container", _in(_div("submain historygroup"))))));
-        env.sleep(1);
-    }
-
-    _highlight(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
-    _click(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
-    //sakuli *for now* cant open the pdf directly, so it is downloaded and sent to the pdf viewer
-    var $pdfFileDownloadLocation = $pdfPath + "_download_" + pdfFileName;
-    _saveDownloadedAs($pdfFileDownloadLocation);
-
-    openPdfFile($pdfFileDownloadLocation);  
-}
-
-function checkPDF(){
-	
-	 //open note
-	env.setSimilarity(0.3);
-    screen.waitForImage("pdf2_note", 5).doubleClick();
-   	
-	env.setSimilarity(0.3);
-	screen.waitForImage("pdf2_in_note", 2).click();
-	env.setSimilarity(0.8);
-	
-    //Copy string
-    env.type("a", Key.CTRL);
-    env.copyIntoClipboard();
-    var copy = env.getClipboard();
-    env.paste(copy);
-    //test string and print success
-    if ($Kommentar + " - " + $Kommentator) {
-        env.type(". . .");
-        env.paste(Key.ENTER);
-        env.paste(Key.ENTER);
-        env.paste("!! Success !!");
-     }
-    else {
-        throw ("Downloaded PDF: Annotation-String does not Match.");
-    }
-
-    env.sleep(9);
-    killApp(PDF_EDITOR_NAME);
-	
-	
+    testCase.endOfStep("Upload PDF Attachment");
 }
 
 function clickLocationButton() {
@@ -239,9 +236,4 @@ function clickLocationButton() {
         button_state_3.click();
         return;
     }
-}
-
-function setfileName() {
-
-    $fileName = $Kommentator + "_" + pdfFileName;
 }

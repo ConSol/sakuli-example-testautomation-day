@@ -33,12 +33,38 @@ function setGlobals() {
     this.PDF_EDITOR_NAME = "masterpdfeditor3";
 }
 
+function logout() {
+    _click(_image("logout.png"));
+}
 
+function maximize(app, image) {
+    var windowLine = app.getRegion().move(0, -40).setH(40);
+    var exists = windowLine.exists(image, 1);
+    if (exists) {
+        exists.click();
+    }
+}
+
+function end() {
+    try {
+        logout();
+        //browser.close();
+    } catch (e) {
+        //do not handle exception, this is just a teardown
+        Logger.logInfo(e);
+    }
+    testCase.saveResult();
+}
 
 function load() {
     var $URL = getUrlCmTestclient();
     _navigateTo($URL);
     _call(top.location.reload());
+    testCase.endOfStep("Load Consol CM");
+}
+
+function setUser(user) {
+    this.$username = user;
 }
 
 function login(attemt) {
@@ -46,7 +72,7 @@ function login(attemt) {
     env.sleep(2);
     _focus(_textbox("username"));
     _click(_textbox("username"));
-    env.type($username);
+    env.type($username); //paste ist stabiler als type
     if (_assertEqual(_getValue(_textbox("username")), $username)) {
         _setValue(_textbox("username"), $username);
     }
@@ -59,7 +85,7 @@ function login(attemt) {
         env.sleep(1);
         _highlight(_span("user"));
     } catch (e) {
-        if (attemt > 0) {  
+        if (attemt > 0) {           //TODO endless loop?
             var a = attemt--;
             login(a);
         } else {
@@ -68,11 +94,21 @@ function login(attemt) {
             return;
         }
     }
+    testCase.endOfStep("Login");
 }
 
-function logout() {
-    _click(_image("logout.png"));
+function increasePriority() {
+    var $link;
+    if (_exists(_link(">>> Beantworten, zurück..."))) {
+        $link = _link(">>> Beantworten, zurück...");
+    } else {
+        $link = _link("ENGLISCHER LINK");
+    }
+    _highlight($link);
+    env.sleep(1);
+    _click($link);
 }
+
 
 function search($string, $ticketNo, attemt) {
     try {
@@ -85,9 +121,10 @@ function search($string, $ticketNo, attemt) {
         env.sleep(2);
         _click(_div({title: $regex}, (_in(_table("gs_dropdown")))));
         env.sleep(5);
-     
+        testCase.endOfStep("Search", 30);
+
     } catch (e) {
-        if (attemt > 0) {
+        if (attemt > 0) {                      //TODO endless loop?
             var a = attemt--;
             search($string, $ticketNo, a);
         } else {
@@ -95,25 +132,6 @@ function search($string, $ticketNo, attemt) {
             testCase.handleException(e);
             return;
         }
-    }
-}
-
-function setUser(user) {
-    this.$username = user;
-}
-
-function writeComment() {
-    //sadly the div to write in is not clickable by sahi, but it will focus if we activate some format options
-    _doubleClick(_link("Linksbündig"));
-
-    env.type($comment);
-}
-
-function maximize(app, image) {
-    var windowLine = app.getRegion().move(0, -40).setH(40);
-    var exists = windowLine.exists(image, 1);
-    if (exists) {
-        exists.click();
     }
 }
 
@@ -125,13 +143,13 @@ function killApp(applicationName) {
     new Application(applicationName).close();
 }
 
-function end() {
-    try {
-        logout();
-        
-    } catch (e) {
-        //do not handle exception, this is just a teardown
-        Logger.logInfo(e);
-    }
-    testCase.saveResult();
+function writeComment() {
+
+    //show where to write
+    //_highlight(_div(0, _in(_iframe("text_ifr"))));
+    //sadly its not clickable by sahi, but it will focus if we activate automaticly some format options
+    _doubleClick(_link("Linksbündig"));
+
+    env.type($comment);
+
 }

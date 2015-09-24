@@ -27,53 +27,45 @@ var $username = "sakuli";
 var $comment = "Auch Sakuli ist begeistert und will jetzt Kaffee!";
 
 try {
-    var browser = new Application(BROWSER_NAME);
+    var browser = Application(BROWSER_NAME);
     browser.focus();
     maximize(browser, "browser_maximize");
 
     load();
-	testCase.endOfStep("Load");
-	
     login(3);
-	testCase.endOfStep("Login");
-	
     search("Sa", "528", 3);
-	testCase.endOfStep("Search Ticket 528");
-	
-	
-	addComment($comment);
-	testCase.endOfStep("Add Comment");
-	
-    checkComment($comment);
-	testCase.endOfStep("Check Comment");
-	
+    navigateTicket();
     env.sleep(3);
 
 } catch (e) {
+    env.sleep(9999);
     testCase.handleException(e);
 }
 finally {
     end();
 }
 
- 
-function addComment($comment){
-	
-	openComment();
+function navigateTicket() {
+    openComment();
     writeComment($comment);
-	submitComment();	
+    addComment();
+    checkComment($comment);
+    testCase.endOfStep("Navigate Ticket");
+
 }
 
 function openComment() {
 
     _highlight(_link("Kommentar"));
     _click(_link("Kommentar"));
+
 }
 
-function submitComment() {
+function addComment() {
 
     _highlight(_button("Hinzufügen"));
     _click(_button("Hinzufügen"));
+
 }
 
 function checkComment($comment) {
