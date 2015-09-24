@@ -36,9 +36,9 @@ try {
 	
     login(3);
 	testCase.endOfStep("Login");
-	
-    search("Sa", "528", 3);
-	testCase.endOfStep("Search Ticket 528");
+
+    search("Sa", "1146", 3);
+    testCase.endOfStep("Search Ticket 1146");
 	
 	
 	addComment($comment);
