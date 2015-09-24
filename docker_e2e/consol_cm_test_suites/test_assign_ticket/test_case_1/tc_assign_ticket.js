@@ -20,7 +20,7 @@ _dynamicInclude($includeFolder);
 _dynamicInclude("../../common/showroom_common.js");
 _dynamicInclude("../../common/login_credentials.js");
 
-var testCase = new TestCase(60, 70);
+var testCase = new TestCase(90, 110);
 
 var $user_01 = "bearbeiter_1";
 var $user_02 = "bearbeiter_2";
