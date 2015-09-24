@@ -34,7 +34,6 @@ try {
     browser.focus();
     maximize(browser, "browser_maximize");
 
-	throw "TEST EXIT code!";
     load();
 	testCase.endOfStep("Load Consol* CM");
 
