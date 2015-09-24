@@ -47,6 +47,8 @@ try {
 	createTicket($ticketName);
 	testCase.endOfStep("Create Ticket");
 
+	_highlight(_span("Angemeldet als:"));
+	env.sleep(1);
 	logout();
 	testCase.endOfStep("Logout User 01");
 
@@ -76,14 +78,13 @@ finally {
 }
 
 function createTicket($titel) {
-	//"446" & "401" are just enums for the checkboxes
 	_highlight(_link("Neuer Vorgang"));
 	_click(_link("Neuer Vorgang"));
 	_setValue(_textbox("createTicket:r:2:w:i:r:1:c:header:r:1:c:c:form:subject:subjectBorder:subjectBorder_body:subject"), $ticketName);
-	_highlight(_select("createTicket:r:2:w:i:r:1:c:header:r:1:c:c:form:cf:r:1:i:t:r:0:dr:1:d:c"));
-	_setSelected(_select("createTicket:r:2:w:i:r:1:c:header:r:1:c:c:form:cf:r:1:i:t:r:0:dr:1:d:c"), "446");
-	_highlight(_select("createTicket:r:2:w:i:r:1:c:header:r:1:c:c:form:cf:r:1:i:t:r:1:dr:1:d:c"));
-
+	_highlight(_select("frm_field_valid w_serviceStandard.type t_enum"));
+	_setSelected(_select("frm_field_valid w_serviceStandard.type t_enum"), "Reklamation");
+	_highlight(_select("frm_field_valid w_serviceStandard.source t_enum"));
+	  
 	//assign it to the user "tea bearbei" = bearbeiter_2
 	_uncheck(_checkbox("checkbox"));
 	_setValue(_textbox("createTicket:r:2:w:i:r:1:c:header:r:1:c:c:form:attrs:container:autoCompleteEngineer:searchField"), "Tea");
@@ -91,7 +92,7 @@ function createTicket($titel) {
 
 	_highlight(_div("Endkunden"));
 	_click(_div("Endkunden"));
-	_setSelected(_select("frm_field_valid w_consumerMasterData.salutation t_enum"), "401");
+	_setSelected(_select("frm_field_valid w_consumerMasterData.salutation t_enum"), "Herr");
 
 	_focus(_textbox("frm_field_valid placeholder_default_watermark w_consumerMasterData.name t_string indexed"));
 	//will trigger the script in CM
@@ -107,6 +108,7 @@ function createTicket($titel) {
 
 	writeComment($comment);
 	_click(_submit("Erzeugen"));
+	env.sleep(1);
 
 }
 
@@ -134,9 +136,9 @@ function disgardTicket() {
    
    _highlight(_select("frm_field_valid w_serviceCommonACFOnly.directCloseReason t_enum"));
    env.sleep(1);
-   //403 is the enum value for "Keine Aktion noetig"
-	_setSelected(_select("frm_field_valid w_serviceCommonACFOnly.directCloseReason t_enum"), "403");
-	 env.sleep(1);
+   _setSelected(_select("customFields:0:first:value:cf:c"), "Keine Aktion nötig");
+	env.sleep(1);
 	_click(_button("OK", _in(_div("/activity_control_form .*/"))));
+	env.sleep(1);
 }
 

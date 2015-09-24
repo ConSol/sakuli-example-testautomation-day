@@ -52,7 +52,6 @@ function login(attemt) {
     }
     _setValue(_password("password"), $password);
     env.sleep(1);
-    _highlight(_submit("submit button"));
     _click(_submit("submit button"));
 
 
