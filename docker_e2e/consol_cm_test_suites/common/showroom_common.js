@@ -60,8 +60,8 @@ function login(attemt) {
         env.sleep(1);
         _highlight(_span("user"));
     } catch (e) {
-        if (attemt > 0) {  
-            var a = attemt--;
+        if (attemt > 0) {
+            var a = attemt - 1;
             login(a);
         } else {
             end();
@@ -89,7 +89,7 @@ function search($string, $ticketNo, attemt) {
      
     } catch (e) {
         if (attemt > 0) {
-            var a = attemt--;
+            var a = attemt - 1;
             search($string, $ticketNo, a);
         } else {
             end();
