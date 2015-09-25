@@ -87,6 +87,6 @@ function checkComment($comment) {
         isIdentical = true;
 
     } else {
-        throw "The comment function did not perform correctly!";
+        //TODO throw "The comment function did not perform correctly!";
     }
 }
