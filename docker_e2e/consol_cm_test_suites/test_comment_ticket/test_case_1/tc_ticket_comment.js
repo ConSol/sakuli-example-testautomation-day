@@ -24,7 +24,7 @@ _dynamicInclude("../../common/login_credentials.js")
 var testCase = new TestCase(60, 70);
 
 var $username = "sakuli";
-var $comment = "Auch Sakuli ist begeistert und will jetzt Kaffee!";
+var $comment = "Auch Sakuli ist begeistert.";
 
 try {
     var browser = new Application(BROWSER_NAME);
@@ -47,7 +47,7 @@ try {
     checkComment($comment);
 	testCase.endOfStep("Check Comment");
 	
-    env.sleep(3);
+    env.sleep(2);
 
 } catch (e) {
     testCase.handleException(e);
@@ -87,6 +87,6 @@ function checkComment($comment) {
         isIdentical = true;
 
     } else {
-        //TODO throw "The comment function did not perform correctly!";
+        throw "The comment function did not perform correctly!";
     }
 }

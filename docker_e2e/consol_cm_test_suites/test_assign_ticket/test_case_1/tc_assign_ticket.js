@@ -25,7 +25,7 @@ var testCase = new TestCase(90, 110);
 var $user_01 = "bearbeiter_1";
 var $user_02 = "bearbeiter_2";
 
-var $comment = "Das ist nur ein Test. Bitte verwerfen.";
+var $comment = "Lore Ipsum...";
 var $ticketName = "Probleme bei Hr. Bohne";
 
 try {

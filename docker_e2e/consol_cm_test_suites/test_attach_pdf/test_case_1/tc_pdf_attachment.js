@@ -25,7 +25,7 @@ _dynamicInclude("../../common/login_credentials.js");
 var testCase = new TestCase(100, 120);
 
 //the filname of the pdf to upload
-var pdfFileName = "ConSol_Solutions.pdf";
+var pdfOriginalFileName = "ConSol_Solutions.pdf";
 //the username to login to the Consol CM Instance (the passwords for this testcase are always the same)
 var $username = "bearbeiter_pdf";
 
@@ -60,7 +60,7 @@ try {
     login(3);
 		
 	//go directly to the preprepared ticket
-    var $URL = getUrlCmTestclient() + "ticket/ticket_name/1155";
+    var $URL = getUrlCmTestclient() + "ticket/ticket_name/1179";
     _navigateTo($URL);
 	testCase.endOfStep("Navigate to Ticket");
     
@@ -85,15 +85,21 @@ finally {
 function getTimeString()
 {
 	var d = new Date();
-	return (d.getHours()) + ":" + d.getMinutes();
+	var dual = "";
+	var min = d.getMinutes();
+	var hour = d.getHours();
+	if (d.getMinutes() < 10)
+	{
+		min = "0";
+	}
+	return hour + ":" + dual + min;
 }
 
 
 function createPDF() {
 
-    setfileName();
     //load pdf and focus application
-    var pdfFileLocation = $pdfPath + pdfFileName;
+    var pdfFileLocation = $pdfPath + pdfOriginalFileName;
     var pdfViewer = openPdfFile(pdfFileLocation);
 
     writeAnnotation(pdfViewer);
@@ -126,8 +132,7 @@ function writeAnnotation(pdfViewer) {
 function safePdf() {
 
     //create the name
-    setfileName();
-    //navigate through the menu
+      //navigate through the menu
     screen.waitForImage("pdf_file", 3).click();
     screen.waitForImage("pdf_save_as", 3).click();
 	
@@ -138,9 +143,12 @@ function safePdf() {
     //set path and name
     env.paste($pdfPath);
     env.sleep(1);
+	$fileName = getNewFileName();
     env.paste($fileName);
     env.sleep(1);
-    //press safe
+    //press safe 
+	// /root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_attach_pdf/test_case_1/pdf/Max Sakuli_14:17
+	// /root/Desktop/git/sakuli-example-testautomation-day/docker_e2e/consol_cm_test_suites/test_attach_pdf/test_case_1/pdf/Max Sakuli_14:19ConSol_Solutions.pdf
     screen.waitForImage("pdf_safe_button", 2).click();
 
     //replace file if it already exists
@@ -161,6 +169,8 @@ function uploadPDF() {
 
     clickLocationButton();
     env.sleep(1);
+	env.type("a", Key.CTRL);
+
     env.paste($pdfPath + $fileName);
 
     env.type(Key.ENTER);
@@ -183,7 +193,7 @@ function downloadPDF() {
     _highlight(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
     _click(_link(0, _in(_div("menu", _in(_div("acim_history_container", _in(_div("submain historygroup"))))))));
     //sakuli *for now* cant open the pdf directly, so it is downloaded and sent to the pdf viewer
-    var $pdfFileDownloadLocation = $pdfPath + "_download_" + setfileName();
+    var $pdfFileDownloadLocation = $pdfPath + "_download_" + getNewFileName();
     _saveDownloadedAs($pdfFileDownloadLocation);
 
     openPdfFile($pdfFileDownloadLocation);  
@@ -246,7 +256,7 @@ function clickLocationButton() {
     }
 }
 
-function setfileName() {
+function getNewFileName() {
 
-    $fileName = $Kommentator + "_" + getTimeString();
+	return $Kommentator + "_" + getTimeString();
 }
