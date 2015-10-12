@@ -35,17 +35,11 @@ try {
 	
     login(3);
 	testCase.endOfStep("Login");
-	
-	checkLink("Hauptseite");
+
+	checkLink("Home");
 	checkLink("Neuer Vorgang");
 	checkLink("Neuer Kontakt | Produkt");
-	//TODO
-	// checkItem("Alle Kundengruppen");
-	// checkItem("Endkunden");
-	// checkItem("Firmenkunden");
-	// checkItem("Mitarbeiter");
-	// checkItem("Produkte");
-	// checkItem("Vertriebspartner");
+
 	env.sleep(1);
 	
 } catch (e) {
