@@ -37,7 +37,7 @@ try {
     login(3);
 	testCase.endOfStep("Login");
 
-    search("Sa", "1146", 3);
+    search("Anr", "1182", 3);
     testCase.endOfStep("Search Ticket 1146");
 	
 	
