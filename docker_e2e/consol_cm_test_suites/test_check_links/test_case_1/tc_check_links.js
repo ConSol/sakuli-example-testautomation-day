@@ -36,7 +36,7 @@ try {
     login(3);
 	testCase.endOfStep("Login");
 
-	checkLink("Hauptseite");
+	checkLink("NOT_VALID_ELEMENT");
 	checkLink("Neuer Vorgang");
 	checkLink("Neuer Kontakt | Produkt");
 
