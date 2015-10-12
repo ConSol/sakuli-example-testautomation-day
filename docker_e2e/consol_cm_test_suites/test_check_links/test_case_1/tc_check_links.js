@@ -18,7 +18,7 @@
 
 _dynamicInclude($includeFolder);
 _dynamicInclude("../../common/showroom_common.js");
-_dynamicInclude("../../common/login_credentials.js")
+_dynamicInclude("../../common/login_credentials.js");
 
 
 var testCase = new TestCase(60, 70);
@@ -36,7 +36,7 @@ try {
     login(3);
 	testCase.endOfStep("Login");
 
-	checkLink("Home");
+	checkLink("Hauptseite");
 	checkLink("Neuer Vorgang");
 	checkLink("Neuer Kontakt | Produkt");
 
