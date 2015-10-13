@@ -36,7 +36,7 @@ try {
     login(3);
 	testCase.endOfStep("Login");
 
-	checkLink("Hauptseite");
+	checkLink("Hallo Allianz");
 	checkLink("Neuer Vorgang");
 	checkLink("Neuer Kontakt | Produkt");
 
