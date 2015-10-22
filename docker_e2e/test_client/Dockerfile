@@ -1,6 +1,6 @@
 # This Dockerfile is used to build an sakuli image based on Centos
 
-FROM consol/sakuli-centos-xfce
+FROM consol/sakuli-centos-xfce:v0.9.1
 MAINTAINER Tobias Schneck "tobias.schneck@consol.de"
 ENV REFRESHED_AT 2015-09-22
 
